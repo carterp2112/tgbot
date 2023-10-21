@@ -3,6 +3,7 @@ from telegram import ForceReply
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 from telegram.ext import filters, MessageHandler
+import os
 
 
 logging.basicConfig(
@@ -95,4 +96,7 @@ if __name__ == '__main__':
     
     application.add_handler(MessageHandler(filters.TEXT, echo))
     
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    PORT = int(os.environ.get('PORT', '443'))
+    HOOK_URL = 'YOUR-CODECAPSULES-URL-HERE' + '/' + TOKEN
+    application.start_webhook(listen='0.0.0.0', port=PORT, url_path=TOKEN, webhook_url=HOOK_URL)
+    application.idle()
