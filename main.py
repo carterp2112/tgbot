@@ -97,6 +97,6 @@ if __name__ == '__main__':
     application.add_handler(MessageHandler(filters.TEXT, echo))
     
     PORT = int(os.environ.get('PORT', '443'))
-    HOOK_URL = 'YOUR-CODECAPSULES-URL-HERE' + '/' + TOKEN
-    application.start_webhook(listen='0.0.0.0', port=PORT, url_path=TOKEN, webhook_url=HOOK_URL)
+    HOOK_URL = 'https://tgbot-urzt.aws-eu-1.ccdns.co/' + '/' + '6536684285:AAEeW_Aeho_Ey-BysxyVXCqkSRCqPFOLKa4'
+    application.start_webhook(listen='0.0.0.0', port=PORT, url_path='6536684285:AAEeW_Aeho_Ey-BysxyVXCqkSRCqPFOLKa4', webhook_url=HOOK_URL)
     application.idle()
