@@ -1,6 +1,7 @@
 import logging
 from telegram import ForceReply
 from telegram import Update
+from telegram.ext import Updater
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 from telegram.ext import filters, MessageHandler
 import os
